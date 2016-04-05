@@ -29,12 +29,14 @@ cell_info structure
 --------------
 contains metadata of the cells and stratification profile. it is constructed by calling scripts as below. 
 
->> cell_info=cell_info_set_type();
->> cell_info=cell_info_get_strat(cell_info,'m2_cells_property_nosoma_yymmdd.mat');
+cell_info=cell_info_set_type();
+cell_info=cell_info_get_strat(cell_info,'m2_cells_property_nosoma_yymmdd.mat');
 
-cell_info_set_type.m
-cell_info_typedef_ac.m
-cell_info_typedef_bc.m
-cell_info_typedef_gc.m         
-cell_info_get_strat.m
+related matlab scripts are below. typedef scripts contain the most important type classification information. 
+
+* cell_info_set_type.m
+ * cell_info_typedef_ac.m
+ * cell_info_typedef_bc.m
+ * cell_info_typedef_gc.m         
+* cell_info_get_strat.m
 
