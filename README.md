@@ -40,3 +40,6 @@ related matlab scripts are below. typedef scripts contain the most important typ
  * cell_info_typedef_gc.m         
 * cell_info_get_strat.m
 
+stratification profiles can be visualized as below with different options given as input arguments.
+
+* cell_info_plot_strat(cell_info,{'37v','37c','37d','37r'},[],0,0,1,0,1);
