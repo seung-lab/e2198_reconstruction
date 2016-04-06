@@ -5,24 +5,24 @@ related data files can be found at ~/seungmount/Omni/e2198_reconstruction/
 Building mesh.omni
 --------------
 * e2198_completed_cells
-  each 5-digit subdirectory becomes the cell ID in mesh.omni. each directory contains the omni/eyewire volumes and segments that comprise the cell. 
+  * each 5-digit subdirectory becomes the cell ID in mesh.omni. each directory contains the omni/eyewire volumes and segments that comprise the cell. 
 
 * stitchVolumeE2198_intoAllOmni_nodup('mesh')
-  this script reads the e2198_completed_cells directory and writes "mesh.h5" file. the file is indexed image of mesh.omni. the script also call omni.omnify to build mesh.omni from mesh.h5. 
+  * this script reads the e2198_completed_cells directory and writes "mesh.h5" file. the file is indexed image of mesh.omni. the script also call omni.omnify to build mesh.omni from mesh.h5. 
 
 Data
 --------------
 * mesh.omni 
-  omni project that contains all the cell reconstruction so far. 
+  * omni project that contains all the cell reconstruction so far. 
 
 * m2_cells_yymmdd.h5 
-  downsampled indexed image from mesh.omni. mesh.omni is in mip level 1 compared to the original e2198. m2_ files are in mip level 2. 
+  * downsampled indexed image from mesh.omni. mesh.omni is in mip level 1 compared to the original e2198. m2_ files are in mip level 2. 
 
 * m2_cells_nosoma_yymmdd.h5
-  somata removed from m2_cells_yymmdd.h5
+  * somata removed from m2_cells_yymmdd.h5
 
 * m2_cells_nosoma_warped_yymmdd.h5
-  transform of m2_cells_nosoma_yymmdd.h5, following Sumbul's conformal transformation method
+  * transform of m2_cells_nosoma_yymmdd.h5, following Sumbul's conformal transformation method
 
 * m2_cells_property_nosoma_yymmdd.mat 
   * num_voxels_at_depth : number of voxels for each cell counted for each "x" value (depth in retina) from m2_cells_nosoma_warped_yymmdd.h5, from which the stratification profile is calculated by normalization. 
