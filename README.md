@@ -27,7 +27,19 @@ Data
 
 cell_info structure
 --------------
-contains metadata of the cells and stratification profile. it is constructed by calling scripts as below. 
+contains metadata of the cells and stratification profile. 
+
+* cell_id: ID in mesh.omni
+* class: 1=GC, 2=AC, 3=BC, 4=yet to be classified, 0=can't tell, 5=non-neuron objects
+* soma: location of soma in the cell layers. 1=GCL 2=INL
+* zone: location in neuropia zone. neuropia1 can have values 1,2,3,4. neuropia2 can have values 1,2,3,... 999 is outside. distinction between neuropia1 & 2 is possible from soma location. 
+* ctn: 0=irrelevant, 1=neuropia1, 2=neuropia2. whether the cell is done during neuropia. it is different from the zone. even if a cell is in a neuropia zone, it could have been completed before neuropia. 
+* complete: 0=incomplete, 1=complete. mesh.omni contains the cells under reconstruction too.
+* type: classified cell types. 
+* annotation: additional info on the cell type. usually molecular or functional name. 
+* strat_nrml/strat_unrml : normalized/unnormalized stratification. two-column array, depth% in the IPL and values. 
+
+it is constructed by calling scripts as below. 
 
 * cell_info=cell_info_set_type();
 * cell_info=cell_info_get_strat(cell_info,'m2_cells_property_nosoma_yymmdd.mat');
