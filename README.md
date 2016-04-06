@@ -4,27 +4,37 @@ related data files can be found at ~/seungmount/Omni/e2198_reconstruction/
 
 Building mesh.omni
 --------------
+mesh.omni is an omni project that contains all the cell reconstructions in the indexed image format and 3D meshes. It is generated as below. 
+
 * e2198_completed_cells
-  * each 5-digit subdirectory is for one cell in mesh.omni. the directory name is cell ID. each directory contains the omni/eyewire volumes and segments that comprise the cell. 
+  * each 5-digit subdirectory is for one cell in mesh.omni. the directory name is cell ID. each directory contains the omni/eyewire volumes and segments that comprise the cell. these are processed data from eyewire plus the saved text files for the old cells when there was no eyewire. 
 
 * stitchVolumeE2198_intoAllOmni_nodup('mesh')
   * this script reads the e2198_completed_cells directory and writes "mesh.h5" file. the file is indexed image of mesh.omni. the script also calls omni.omnify to build mesh.omni using mesh.h5. 
 
-Data
+Data processed from mesh.omni
 --------------
-* mesh.omni 
-  * omni project that contains all the cell reconstruction so far. 
 
 * m2_cells_yymmdd.h5 
   * downsampled indexed image from mesh.omni. mesh.omni is in mip level 1 compared to the original e2198. m2_ files are in mip level 2. 
+  * recon_preproc_omni2hdf5('mesh.omni','m2_cells_yymmdd.h5')
 
 * m2_cells_nosoma_yymmdd.h5
   * somata removed from m2_cells_yymmdd.h5
+  * cell_info=cell_info_set_type();
+  * cell_info=cell_info_get_soma_bbox_omni(cell_info);
+  * recon_preproc_remove_soma_from_bbox(cell_info,'m2_cells_yymmdd.h5','m2_cells_nosoma_yymmdd.h5');
 
 * m2_cells_nosoma_warped_yymmdd.h5
   * transform of m2_cells_nosoma_yymmdd.h5, following Sumbul's conformal transformation method
+  * bboxWarpedVol=[-235 -8 -10 1702 5270 3346];
+  * conformalJump=10;
+  * recon_preproc_warp_volume('m2_warp.map','m2_cells_nosoma_yymmdd.h5','m2_cells_nosoma_warped.h5',bboxWarpedVol,conformalJump);
 
 * m2_cells_property_nosoma_yymmdd.mat 
+  * cell_property=recon_anal_get_properties_at_depth(cells_warped_h5,99999);
+  * save('m2_cells_property_nosoma_yymmdd.mat','-v7.3','-struct','cell_property');
+  * 
   * num_voxels_at_depth : number of voxels for each cell counted for each "x" value (depth in retina) from m2_cells_nosoma_warped_yymmdd.h5, from which the stratification profile is calculated by normalization. 
   * xy_projection : projection of cells onto the the plane parallel to the retina
   * cell_hull : convex hull of the xy_projection
