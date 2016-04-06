@@ -5,10 +5,10 @@ related data files can be found at ~/seungmount/Omni/e2198_reconstruction/
 Building mesh.omni
 --------------
 * e2198_completed_cells
-  * each 5-digit subdirectory becomes the cell ID in mesh.omni. each directory contains the omni/eyewire volumes and segments that comprise the cell. 
+  * each 5-digit subdirectory is for one cell in mesh.omni. the directory name is cell ID. each directory contains the omni/eyewire volumes and segments that comprise the cell. 
 
 * stitchVolumeE2198_intoAllOmni_nodup('mesh')
-  * this script reads the e2198_completed_cells directory and writes "mesh.h5" file. the file is indexed image of mesh.omni. the script also call omni.omnify to build mesh.omni from mesh.h5. 
+  * this script reads the e2198_completed_cells directory and writes "mesh.h5" file. the file is indexed image of mesh.omni. the script also calls omni.omnify to build mesh.omni using mesh.h5. 
 
 Data
 --------------
