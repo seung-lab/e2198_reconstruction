@@ -4,7 +4,7 @@ gc=[
 
 % melanopsin: very large sparse
 struct('name','1ws','annotation','M1','cells',[20203 20029]);
-% 
+% skel
 struct('name','1wt','annotation','sOFFalpha','cells',[10018 17109 26022]); 
 % melanopsin? 
 struct('name','1no','annotation','','cells',[20157 17110 17050 17021 20092 17236 26024 10007]);
@@ -15,7 +15,7 @@ struct('name','1ni','annotation','','cells',[20164 17182 20132 26019 26087]);
 struct('name','2an','annotation','mini-J','cells',[17177 20066 20060 17027 15018 17105 15066 10017 10010 17062 50001 20264 20168 20147 17130 20101 20024 26190 26026 26049 26082 26129 26147 26172 26041]);
 % 
 % midi-J: 17144(>>3o?) 17061 0201 26095 17200 26055 26189(>>3x?)
-struct('name','2aw','annotation','midi-J','cells',[17075 17060 17028 20103 20201 17205 17107 20047 17144 17061 17200 26018 26150 26163 26189 26193 26095 26055 17024]); 
+struct('name','2aw','annotation','midi-J','cells',[17075 17060 17028 20103 20201 17205 17107 20047 17144 17061 17200 26018 26150 26163 26189 26193 26095 26055 17024 26003 26038 26110 26131]); 
 %
 struct('name','2o','annotation','','cells',[17216 10005 10013 26062 26118]);
 % suspicious: 17192 (26126<>26131)
@@ -25,7 +25,8 @@ struct('name','3o','annotation','','cells',[26155 20121 17037 17076]);
 % mini tOffAlpha
 struct('name','3i','annotation','mini-sOFFalpha','cells',[17135 20107 17077 26063 26104 26116 26188]);
 %
-struct('name','3x','annotation','','cells',[26003 26038 26110 26131]);
+% 3x merged into 2aw
+% struct('name','3x','annotation','','cells',[26003 26038 26110 26131]);
 % 
 
 
@@ -45,7 +46,7 @@ struct('name','5ti','annotation','w3-like','cells',[17090 17181 50002 20114 2010
 struct('name','5so','annotation','','cells',[17160 17146 20223 17081 17127 17168 20053 20012 26046 17138 17011 26111 26140 26151 26181 26187]);
 % 17011 17138
 struct('name','5si','annotation','','cells',[17040 20135 20183 17071 20070 17055 26044 26106 26159 26142 26133]);
-% 
+%  
 
 % 
 struct('name','6sn','annotation','mini-tONalpha','cells',[20198 20073 17082 26035 26043 26171]);
@@ -65,14 +66,17 @@ struct('name','7iv','annotation','sON DS ventral','cells',[26070 26075 26078]);
 
 % on alpha sustained
 struct('name','8w','annotation','sONalpha, M4','cells',[17111 26001 26071 26079]);
+% mini-alpha(new)
+struct('name','8n','annotation','','cells',[20228]);
 % 
 % struct('name','8n','annotation','','cells',[20126]);
 % very wide 
 % struct('name','9w','annotation','M2','cells',[20228]);
 % 
-struct('name','9m','annotation','','cells',[20112 20076 20056]);
+% struct('name','9m','annotation','','cells',[20112 20076 20056]);
 %
-struct('name','9n','annotation','','cells',[26149 26168 26127 20006]);
+% struct('name','9n','annotation','','cells',[26149 26168 26127 20006]);
+struct('name','9','annotation','','cells',[26149 26168 26127 20006 20112 20076 20056 26074 26135]);
 
 % w3: 
 struct('name','51','annotation','w3','cells',[20120 20212 20182 17098 17095 20153 20258 17035 20037 26177 26154 26136 26113 26098 26085 26054 26039 26025 26122]);
@@ -112,8 +116,10 @@ struct('name','27','annotation','','cells',[20117 17212 26051 26065]);
 
 % regular bilayer two layer even further
 struct('name','81i','annotation','','cells',[20158 26097 26090]);
-%
+% 
 struct('name','81o','annotation','','cells',[20069 26052]);
+% struct('name','81','annotation','','cells',[20158 26097 26090 20069 26052]);
+
 % regular bilayer 
 struct('name','82wo','annotation','','cells',[20118 26091]);
 %
@@ -127,11 +133,13 @@ struct('name','83','annotation','','cells',[17009 20197]);
 % diffuse bilayer more at off layer
 struct('name','28','annotation','','cells',[20243 20155 20163 20257 26005 20167 26033]);
 % regular bilayer
-struct('name','91n','annotation','','cells',[20218 25003 20042 26088 26074]);
+% struct('name','91n','annotation','','cells',[20218 25003 20042 26088 26074]);
 % regular bilayer on-dsgc style
-struct('name','91w','annotation','','cells',[20081 20020 26135]);
+% struct('name','91w','annotation','','cells',[20081 20020 26135]);
+struct('name','91','annotation','','cells',[20218 25003 20042 26088 20081 20020]);
 
-struct('name','orphans','annotation','','cells',[20126 20228]);
+% struct('name','orphans','annotation','','cells',[20126 20228]);
+struct('name','orphans','annotation','','cells',[20126]);
 
 struct('name','weirdos','annotation','','cells',[17134 20248 26069 26093]);
 
