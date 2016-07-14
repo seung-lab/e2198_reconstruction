@@ -1,6 +1,9 @@
-function cell_info=cell_info_set_type()
+function cell_info=cell_info_set_type(cell_info)
+% optional input: cell_info struct to update
 
+if ~exist('cell_info', 'var')
 cell_info=get_list();
+end
 
 gc=cell_info_typedef_gc();
 bc=cell_info_typedef_bc();
